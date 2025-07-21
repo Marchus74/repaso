@@ -239,18 +239,69 @@
     
     
     *** Arrays
-        * ARRAY
+        
         * Tambien llamadas listas (en GOBSTONE) o arreglos son colecciones de datos, 
         * en JS pueden tener distintos tipos
         * Se pueden crear vacias o con datos
         * los array son de tipo objetos en JS
-        */
+        
 
         let arrayVacio= []
-        let arrayConDatos= ["dato string", 325 , true, arrayVacio]
+        let arrayConDatos= ["dato string", 325 , true, arrayVacio, {objeto}]
 
-        /**
-        * agregar un dato a un array 
+        Cosas que se puede hacer con los array
+
+        🧰 Agregar y eliminar elementos
+        - push() → agrega al final
+        - pop() → elimina del final
+        - unshift() → agrega al inicio
+        - shift() → elimina del inicio
+        - splice() → agrega, elimina o reemplaza en cualquier posición
+
+        🔁 Recorrer y transformar
+        - forEach() → ejecuta una función por cada elemento
+        - map() → transforma cada elemento y devuelve un nuevo array
+        - filter() → devuelve solo los elementos que cumplen una condición
+        - reduce() → acumula valores en un solo resultado
+        - flatMap() → combina map() + flat() en una sola pasada
+
+        🔍 Buscar elementos
+        - find() → devuelve el primer elemento que cumple una condición
+        - findIndex() → devuelve el índice del primero que cumple
+        - findLast() / findLastIndex() → versiones que buscan desde el final
+        - indexOf() / lastIndexOf() → busca por valor
+        - includes() → verifica si existe un valor
+
+        📐 Ordenar y reorganizar
+        - sort() → ordena los elementos
+        - reverse() → invierte el orden
+        - toSorted() / toReversed() → versiones que devuelven copias ordenadas/invertidas
+        - toSpliced() → copia con elementos eliminados o reemplazados
+
+        🧪 Transformar a otros formatos
+        - join() → convierte el array en string
+        - concat() → une arrays
+        - slice() → copia una parte del array
+        - flat() → aplana arrays anidados
+        - fill() → rellena con un valor
+        - from() → crea un array desde un iterable
+
+        🧠 Validaciones y utilidades
+        - some() → ¿al menos uno cumple la condición?
+        - every() → ¿todos cumplen la condición?
+        - isArray() → ¿es un array?
+        - at() → accede por índice (incluye negativos)
+        - length → cantidad de elementos
+
+        🧬 Extras modernos
+        - Desestructuración: const [a, b] = arr;
+        - Spread operator: const copia = [...arr];
+        - Comparación profunda: JSON.stringify(arr1) === JSON.stringify(arr2)
+
+
+
+
+        agregar un dato a un array 
 
         // push "agraga un dato al final"
         
@@ -292,11 +343,58 @@
 
         console.log(postres);       // ["tarta", "helado", "flan", "brownie", "gelatina"] 
 
+        
         Recorriendo los Array
+
+        Para recorrer se usa por ejemplo foreach su sintaxis es
+
+            nombreDeLArray.forEach((elemento, indice) => {
+            // Código a ejecutar
+            // sumar 1 al indice
+            });
+
 
         Con ForEach:
 
             const postres = ["tarta", "helado", "flan", "brownie", "gelatina"];
+
+            postres.forEach((postre, indice) => {
+                console.log(`Postre #${indice + 1}: ${postre}`);
+            });
+        
+        con Map:
+
+            sintaxis basica
+            array.map((elemento, indice, array) => {
+            // Código que transforma el elemento
+            return nuevoValor;
+            });
+
+
+            const postres = ["tarta", "helado", "flan", "brownie", "gelatina"];
+
+            const postresEnMayusculas = postres.map((postre, i) => {
+            return `Postre #${i + 1}: ${postre.toUpperCase()}`;
+            });
+
+            console.log(postresEnMayusculas);
+
+            Diferencias clave entre forEach() y map()
+             
+            | Retorno         |forEach() No devuelve nada (undefined)           | map() Devuelve un nuevo array transformado | 
+            | Propósito       | forEach() Ejecutar una acción por cada elemento | map() Transformar cada elemento y crear otro array | 
+            | Encadenamiento | forEach() No se puede encadenar | map() Sí, se puede  encadenar con filter(), reduce()... | 
+            | Uso típico     | forEach() Logs, efectos secundarios, DOM updates | map() Formatear datos, cálculos, render dinámico | 
+            | Modifica el original | No | No | 
+
+             ¿Cuál usar?
+            - Usá forEach() si solo querés hacer algo con cada elemento (como imprimir, actualizar el DOM, etc.).
+            - Usá map() si querés transformar los datos y guardar el resultado.
+
+
+
+
+
 
             
 
@@ -331,5 +429,59 @@
     cuando usarlo?
 
 Funciones
+
+
+Cosas que se puede hacer con los array
+
+🧰 Agregar y eliminar elementos
+- push() → agrega al final
+- pop() → elimina del final
+- unshift() → agrega al inicio
+- shift() → elimina del inicio
+- splice() → agrega, elimina o reemplaza en cualquier posición
+
+🔁 Recorrer y transformar
+- forEach() → ejecuta una función por cada elemento
+- map() → transforma cada elemento y devuelve un nuevo array
+- filter() → devuelve solo los elementos que cumplen una condición
+- reduce() → acumula valores en un solo resultado
+- flatMap() → combina map() + flat() en una sola pasada
+
+🔍 Buscar elementos
+- find() → devuelve el primer elemento que cumple una condición
+- findIndex() → devuelve el índice del primero que cumple
+- findLast() / findLastIndex() → versiones que buscan desde el final
+- indexOf() / lastIndexOf() → busca por valor
+- includes() → verifica si existe un valor
+
+📐 Ordenar y reorganizar
+- sort() → ordena los elementos
+- reverse() → invierte el orden
+- toSorted() / toReversed() → versiones que devuelven copias ordenadas/invertidas
+- toSpliced() → copia con elementos eliminados o reemplazados
+
+🧪 Transformar a otros formatos
+- join() → convierte el array en string
+- concat() → une arrays
+- slice() → copia una parte del array
+- flat() → aplana arrays anidados
+- fill() → rellena con un valor
+- from() → crea un array desde un iterable
+
+🧠 Validaciones y utilidades
+- some() → ¿al menos uno cumple la condición?
+- every() → ¿todos cumplen la condición?
+- isArray() → ¿es un array?
+- at() → accede por índice (incluye negativos)
+- length → cantidad de elementos
+
+🧬 Extras modernos
+- Desestructuración: const [a, b] = arr;
+- Spread operator: const copia = [...arr];
+- Comparación profunda: JSON.stringify(arr1) === JSON.stringify(arr2)
+
+
+
+
 
 
