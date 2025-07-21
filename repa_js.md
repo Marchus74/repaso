@@ -46,7 +46,7 @@
     * El operador + esta sobrecargado y sirve como concatenacio (para unir dos variables)
     * let Nombre   = "Juan"
     * let Apellido = 'Lopez'
-    * let ombreCompleto = nombre + "(espacio)" + apellido
+    * let nombreCompleto = nombre + "(espacio)" + apellido
     * otra forma de concatenar texto 
     *      let alias = `Mi nombre es ${nombre} y mi apellido es ${apellido}` (alt+96)
     *  
@@ -88,7 +88,7 @@
     * Unarios y Ternarios
     * son los que se usan por ejemplo para incremento, decremento
     * 
-    * a++ o a-- incremeta en 1 o decremeta en 1
+    * a++ o a-- incremeta en 1 o decremeta en 1 
     * 
     * Termario
     * let c = b > a ? "Es Verdadero!!!" : " Esto es Falso!!"
@@ -134,10 +134,10 @@
     if ( edad == 18) {
     console.log ( `El señor ${nombre} puede trabajar con nosotros`)
     } 
-    else if ( edad == 25) {
+    else if ( nombre == "Marcos") {
     console.log ( `El señor ${nombre} puede invertir en nuestros activos`)
     }
-    else if ( edad == 40) {
+    else if ( trabaja == 40) {
         console.log ( `El señor ${nombre} puede entrar en nuestro plan de salud`)
     } 
     else {
@@ -176,7 +176,7 @@
 
     let clientes = ["Martin" , "Carlos", "Pedro"]
 
-    for (let i = 0; i < clientes.length; i++) {
+    for (let i= 0; i < clientes.length; item ++) {
     console.log(clientes[i]);
     }
     
@@ -185,9 +185,8 @@
     
 
     let numerodeclientes = 10
-
+    
     while (numerodeclientes > 0) {
-
     console.log (`Completar datos de cliente numero ${numerodeclientes-1}`)
     numerodeclientes--
     }
@@ -261,6 +260,7 @@
         🔁 Recorrer y transformar
         - forEach() → ejecuta una función por cada elemento
         - map() → transforma cada elemento y devuelve un nuevo array
+
         - filter() → devuelve solo los elementos que cumplen una condición
         - reduce() → acumula valores en un solo resultado
         - flatMap() → combina map() + flat() en una sola pasada
@@ -281,7 +281,7 @@
         🧪 Transformar a otros formatos
         - join() → convierte el array en string
         - concat() → une arrays
-        - slice() → copia una parte del array
+        - slice(1,5) → copia una parte del array
         - flat() → aplana arrays anidados
         - fill() → rellena con un valor
         - from() → crea un array desde un iterable
@@ -297,8 +297,6 @@
         - Desestructuración: const [a, b] = arr;
         - Spread operator: const copia = [...arr];
         - Comparación profunda: JSON.stringify(arr1) === JSON.stringify(arr2)
-
-
 
 
         agregar un dato a un array 
@@ -348,7 +346,7 @@
 
         Para recorrer se usa por ejemplo foreach su sintaxis es
 
-            nombreDeLArray.forEach((elemento, indice) => {
+            nombreDeLArray.forEach((elemento, item) => {
             // Código a ejecutar
             // sumar 1 al indice
             });
