@@ -1,6 +1,6 @@
 ***Objetos en JS
     Que es un objeto en POO
-    🧠 En PPO, un objeto es una unidad que combina datos y funciones en un solo conjunto el cual nos permite representar de forma abastractas cosas (entes) de la vida real.
+    🧠 En PPO, un objeto es una unidad que combina datos y funciones en un solo conjunto  y nos permite representar de forma abastractas cosas (entes) de la vida real.
 
     como es su sintaxis en JS
 
