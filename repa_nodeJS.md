@@ -58,7 +58,7 @@
 
         Crear el proyecto  " yarn create vite "
         Intalar las dependencias Yarn
-        Inicializar el Servidor " yarn dev --host "
+        Inicializar el Servidor " yarn dev --host"
 
 ***Creando un proyecto con React + Vite , Tailwind CSS, ESLint y Prettier, usando Yarn
 
